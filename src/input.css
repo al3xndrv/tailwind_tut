@@ -11,3 +11,41 @@
         @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
     }
 }
+
+.word-rotator {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.word-rotator .word {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    animation: rotateWord 12s linear infinite 0s;
+}
+
+.word-rotator .word:nth-child(2) {
+    animation-delay: 2s;
+}
+.word-rotator .word:nth-child(3) {
+    animation-delay: 4s;
+}
+.word-rotator .word:nth-child(4) {
+    animation-delay: 6s;
+}
+.word-rotator .word:nth-child(5) {
+    animation-delay: 8s;
+}
+.word-rotator .word:nth-child(6) {
+    animation-delay: 10s;
+}
+
+@keyframes rotateWord {
+    0% { opacity: 0; transform: translateY(-50px); }
+    2% { opacity: 1; transform: translateY(0); }
+    15% { opacity: 1; transform: translateY(0); }
+    17% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 0; transform: translateY(50px); }
+}
